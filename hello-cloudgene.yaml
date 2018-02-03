@@ -1,9 +1,9 @@
 name: hello-cloudgene
-version: 1.2.0-beta
+version: 1.2.0-beta.1
 author: lukfor
 workflow:
   steps:
     - name: Hello
       exec: /bin/echo Hello Cloudgene!
     - name: Version
-      exec: /bin/echo 1.2.0-beta
+      exec: /bin/echo 1.2.0-beta.1
