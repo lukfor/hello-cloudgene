@@ -1,9 +1,20 @@
-name: hello-cloudgene
-version: 1.2.0-beta.1
+name: Random Quote Generator
+version: 1.2.0
 author: lukfor
 workflow:
   steps:
-    - name: Hello
-      exec: /bin/echo Hello Cloudgene!
-    - name: Version
-      exec: /bin/echo 1.2.0-beta.1
+
+    - name: Random quote
+      cmd: /usr/bin/shuf -n 1 quotes.txt
+      stdout: true
+
+    - name: $count random quotes
+      type: groovy
+      script: get-random-quote.groovy
+      quotes: $count
+
+  inputs:
+    - id: count
+      description: How many quotes?
+      type: text
+      value: 5
