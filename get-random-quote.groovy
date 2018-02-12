@@ -11,9 +11,11 @@ def run(WorkflowContext context) {
   def lines = content.split("\n")
 
   for (int i = 1; i <= quotes; i++){
+    context.beginTask("Generating quote.... ");
+    sleep(7000);
     int random = new Random().nextInt(lines.length); // get random line number
     String randomLine = lines[random]; // get random line
-    context.ok("#" + i + " " + randomLine);
+    context.endTask("#" + i + " " + randomLine, WorkflowContext.OK);
   }
 	return true;
 }
