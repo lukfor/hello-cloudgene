@@ -1,17 +1,15 @@
-name: Random Quote Generator
+name: Hello Cloudgene
+description: HelloWorld Application for Cloudgene.<br>This sample application gives you some random quotes.
 version: 1.2.0
 author: lukfor
+submitButton: Generate random quotes
 workflow:
   steps:
 
-    - name: Random quote
-      cmd: /usr/bin/shuf -n 1 quotes.txt
-      stdout: true
-
-    - name: $count random quotes
+    - name: Top ${count} random quotes
       type: groovy
       script: get-random-quote.groovy
-      quotes: $count
+      quotes: ${count}
 
   inputs:
     - id: count
