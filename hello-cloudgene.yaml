@@ -1,3 +1,4 @@
+id: hello-cloudgene
 name: Hello Cloudgene
 description: HelloWorld Application for Cloudgene.<br>This sample application gives you some random quotes.
 version: 1.2.0
